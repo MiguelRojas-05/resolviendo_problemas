@@ -10,14 +10,14 @@ cin>>t;
 while (t--)
 {
     int contador = 0;
-    string n; cin>>n;
+    string n;
+    cin>>n;
     for (int i = 0; i < n.length(); i++)
     {
-        contador = contador + n[i]-48;
+        contador = contador + (n[i] - 48);
     }
-    cout<<contador<<endl;    
+    cout<<contador<<endl;  
 }
-
 
     return 0;
 }
