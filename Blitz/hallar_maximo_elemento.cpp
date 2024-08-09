@@ -1,26 +1,19 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 void solve()
 {
     int n;
     cin >> n;
-    vector<int> v(n);
+    set<int> s;
     for (int i = 0; i < n; i++)
     {
-        cin >> v[i];
+        int x;
+        cin >> x;
+        s.insert(x);
     }
-    long long y = 1;
-    for (int i = 0; i < n; i++)
-    {
-        y *= v[i];
-    }
-    for (int i = 0; i < n; i++)
-    {
-        cout << y / v[i] << " ";
-    }
-
-    cout << endl;
+    cout << *s.rbegin() << endl;
 }
 
 int main()
@@ -29,9 +22,11 @@ int main()
     cin.tie(0);
     int t;
     cin >> t;
+
     while (t--)
     {
         solve();
     }
+
     return 0;
 }

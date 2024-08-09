@@ -12,24 +12,31 @@ int main()
     {
         int a, b, c, x, y;
         cin >> a >> b >> c >> x >> y;
-        int first_dif = a - x;
-        int second_dif = b - y;
+        // diferencia entre comida de perros - cantidad de perros
+        int r = a - x;
+        // diferencia entre comida de gatos - cantidad de gatos
+        int h = b - y;
+        // creamos bool para saber si alcanzó o no alcanzó la cantidad de comida.
         bool definidor = true;
-        int acumulador = 0;
-        if (first_dif < 0)
+        // cantidad de perros o gatos que no comió
+        int total = 0;
+
+        if (r < 0)
         {
-            acumulador += first_dif;
+            total += r;
         }
-        if (second_dif < 0)
+        if (h < 0)
         {
-            acumulador += second_dif;
-        }
-        if ((c + acumulador) < 0)
-        {
-            definidor = false;
+            total += h;
         }
 
-        if (definidor)
+        if ((c + total) < 0)
+        {
+            definidor = false;
+            // significa que no alcanza
+        }
+
+        if (definidor == true)
         {
             cout << "SI" << endl;
         }

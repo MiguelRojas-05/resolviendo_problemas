@@ -1,28 +1,30 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 void solve()
 {
     int n;
     cin >> n;
-    vector<int> v(n);
+    vector<int> v;
+    for (int i = 0; i < n; i++)    
+    {
+        int pvt;
+        cin >> pvt;
+        v.push_back(pvt);
+    }
+    int k;
+    cin >> k;
     for (int i = 0; i < n; i++)
     {
-        cin >> v[i];
+        if(v[i]%k==0){
+            cout<<v[i]<<" ";
+        }else{
+            cout<<"X"<<" ";
+        }
     }
-    long long y = 1;
-    for (int i = 0; i < n; i++)
-    {
-        y *= v[i];
-    }
-    for (int i = 0; i < n; i++)
-    {
-        cout << y / v[i] << " ";
-    }
-
-    cout << endl;
+    cout<<endl;
 }
-
 int main()
 {
     ios_base::sync_with_stdio(0);
@@ -33,5 +35,6 @@ int main()
     {
         solve();
     }
+
     return 0;
 }
