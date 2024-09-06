@@ -1,1 +1,0 @@
-{"name":"Local: Minions","url":"c:\\Users\\aimar\\OneDrive\\Escritorio\\ProgramacionCpp\\Blitz\\Minions.cpp","tests":[{"id":1721618397890,"input":"3\n123456789\n777\n2024","output":"45\t\n21\t\n8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\aimar\\OneDrive\\Escritorio\\ProgramacionCpp\\Blitz\\Minions.cpp","group":"local","local":true}

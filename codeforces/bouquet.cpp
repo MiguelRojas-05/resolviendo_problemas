@@ -3,46 +3,49 @@
 using namespace std;
 using ll = long long;
 
-void solve()
-{
+void solve() {
     ll n, m;
     cin >> n >> m;
     map<ll, ll> mp;
-    for (ll i = 0; i < n; i++)
-    {
+
+    for (ll i = 0; i < n; i++) {
         ll pvt;
         cin >> pvt;
         mp[pvt] += pvt;
     }
 
-    for (auto &k : mp)
-        cout << k.first << " " << k.second << '\n';
-    cout << "---------" << '\n';
     ll max_sum = 0, sum = 0;
-    int c = 0; // cantidad de tipos de flores
-    auto it = mp.begin();
-    ll b = it->first;
-    while (max_sum < m && it != mp.end())
-    {
-        c++; ll f = it->first,s = it->second;//actual
-        if(((f - b) <= 1) && (c <= 2) ){
-            if( (sum += s < m))sum += s;
-        }else{
-            c=0;
-            if(sum > max_sum) max_sum = sum;
+    auto after = mp.begin();
+    auto before = mp.begin();
+
+    while (after != mp.end()) {
+        if ((after->first - before->first) == 0) { 
+            sum += after->second;
+            advance(after, 1);
+        } 
+        else if ((after->first - before->first) == 1) { 
+            sum += after->second;
+            max_sum = max(max_sum, sum);
+            advance(after, 1);
+        } 
+        else { 
+            max_sum = max(max_sum, sum);
+            sum -= before->second;
+            advance(before, 1);
         }
     }
-    cout<<max_sum<<'\n';
+
+    max_sum = max(max_sum, sum);
+    
+    cout << min(max_sum, m) << '\n';
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         solve();
     }
 
