@@ -25,14 +25,6 @@ void solve() {
                    - (i > 0 && j > 0 ? matriz[i - 1][j - 1] : 0);
     }
   }
-
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < n; j++) {
-      cout << matriz[i][j] << ' ';
-    }
-    cout << '\n';
-  }
-
   while (q--) {
     int y1, x1, y2, x2;
     cin >> y1 >> x1 >> y2 >> x2;
